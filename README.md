@@ -6,7 +6,7 @@ An application to search beautiful images
 
 This project is a images search application which uses pixabay.com API to search the images and return the appropriate results
 
-![Screenshot_1665346778](https://user-images.githubusercontent.com/51371766/194778505-5735d844-903d-464f-9f8a-c6ef38d619d9.png)
+![Screenshot_1665346778](https://user-images.githubusercontent.com/51371766/194778505-5735d844-903d-464f-9f8a-c6ef38d619d9.png| width = 100)
 
 ![Screenshot_1665346798](https://user-images.githubusercontent.com/51371766/194778514-d4f07d5f-f430-4d8c-b1c5-b077e75c3740.png)
 
