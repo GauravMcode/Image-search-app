@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:imageapp/HomePage.dart';
+import 'ImagesScreen.dart';
 
 class ImageCubit extends Cubit<List> {
   ImageCubit() : super([]);
@@ -12,14 +13,36 @@ class ImageCubit extends Cubit<List> {
 
     var data = await json.decode(response.body);
     List imageList = data["hits"];
-    print(imageList);
     emit(imageList);
+  }
+
+  deactivate() {
+    emit([]);
   }
 
   @override
   void onChange(Change<List> change) {
     // TODO: implement onChange
     super.onChange(change);
+    isLoading = false;
     print(change);
   }
 }
+
+// class LoadingCubit extends Cubit<bool> {
+//   LoadingCubit() : super(true);
+
+//   checkLoading() {
+//     if (isLoading == false) {
+//       emit(false);
+//     } else {
+//       emit(true);
+//     }
+//     @override
+//     void onChange(Change<bool> change) {
+//       // TODO: implement onChange
+//       super.onChange(change);
+//       print(change);
+//     }
+//   }
+// }

@@ -10,9 +10,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      lazy: false,
-      create: (context) => ImageCubit(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<ImageCubit>(
+          create: (context) => ImageCubit(),
+        ),
+        // BlocProvider<LoadingCubit>(
+        //   create: (context) => LoadingCubit(),
+        // )
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: "Image App",
